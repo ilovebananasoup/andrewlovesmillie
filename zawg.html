@@ -422,21 +422,41 @@ async function init() {
         setFile(file);
     });
 
-    function openSite(url) {
+    function openSite(url, title, favicon) {
         const win = window.open('', '_blank');
         if (!win) return;
+
         const doc = win.document;
-        doc.open(); doc.close();
-        doc.documentElement.style.margin = '0';
-        doc.body.style.margin = '0';
-        doc.body.style.height = '100vh';
-        const iframe = doc.createElement('iframe');
-        iframe.src = url;
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        doc.body.appendChild(iframe);
+        doc.open();
+        doc.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>${title}</title>
+                <link rel="icon" href="${favicon}">
+                <style>
+                    html, body {
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+                </style>
+            </head>
+            <body>
+                <iframe src="${url}" sandbox="allow-scripts allow-forms allow-pointer-lock"></iframe>
+            </body>
+            </html>
+        `);
+        doc.close();
     }
+
+
 
     async function addGame(game) {
         await db.add('games', game);
@@ -456,7 +476,12 @@ async function init() {
                     <div><img src="${g.img}" alt="${g.name}"></div>
                     <div class="title">${g.name}</div>
                 `;
-                card.onclick = () => openSite(g.url);
+                card.onclick = () => openSite(
+                    g.url,
+                    g.title || g.name,
+                    g.favicon || g.img
+                );
+
                 card.oncontextmenu = async e => {
                     e.preventDefault();
                     if (confirm(`Delete "${g.name}"?`)) {

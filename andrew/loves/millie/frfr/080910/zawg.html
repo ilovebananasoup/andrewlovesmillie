@@ -271,7 +271,15 @@ body {
                 </svg>
             </div>
             <input class="search-bar" placeholder="Search games...">
-            <div></div>
+            <div>
+                <input 
+                    id="custom" 
+                    class="search-bar" 
+                    name="site-open" 
+                    style="width: 400px; border-radius: 20px 0px 0px 20px;" 
+                    placeholder="Search site, press enter to open... EX: https://andrewlovesmillie.com"
+                    onkeydown="if(event.key === 'Enter'){ openSite(this.value); }">
+            </div>
         </div>
     </div>
     <div class="gui-body">
@@ -610,20 +618,43 @@ async function init() {
     });
 
     function openSite(url) {
+        const presetKey = presetSelect.value;
+        const preset = presets[presetKey];
+
         const win = window.open('', '_blank');
         if (!win) return;
+
         const doc = win.document;
-        doc.open(); doc.close();
-        doc.documentElement.style.margin = '0';
-        doc.body.style.margin = '0';
-        doc.body.style.height = '100vh';
-        const iframe = doc.createElement('iframe');
-        iframe.src = url;
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        doc.body.appendChild(iframe);
+        doc.open();
+        doc.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>${preset.title}</title>
+                <link rel="icon" href="${preset.favicon}">
+                <style>
+                    html, body {
+                        margin: 0;
+                        padding: 0;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border: none;
+                    }
+                </style>
+            </head>
+            <body>
+                <iframe src="${url}" sandbox="allow-scripts allow-forms allow-pointer-lock"></iframe>
+            </body>
+            </html>
+        `);
+        doc.close();
     }
+window.openSite = openSite;
+
 
     async function addGame(game) {
         await db.add('games', game);
@@ -644,6 +675,7 @@ async function init() {
                     <div class="title">${g.name}</div>
                 `;
                 card.onclick = () => openSite(g.url);
+
                 card.oncontextmenu = async e => {
                     e.preventDefault();
                     if (confirm(`Delete "${g.name}"?`)) {
