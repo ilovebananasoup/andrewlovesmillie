@@ -330,7 +330,7 @@ body {
 import { openDB } from 'https://unpkg.com/idb?module';
 
 document.addEventListener('keydown', async (e) => {
-    if (e.altKey && e.key === '[') {
+    if (e.altKey && e.key === 'p') {
         if (!confirm('Clear all stored data?')) return;
         indexedDB.deleteDatabase('zeepzorp');
         location.reload();
@@ -398,7 +398,7 @@ async function init() {
             img: 'https://andrewlovesmillie.com/basketball-stars/icon.png'
         },
         {
-            name: 'Binding of Isaac',
+            name: 'The Binding of Isaac',
             url: 'https://andrewlovesmillie.com/binding-of-isaac',
             img: 'https://andrewlovesmillie.com/binding-of-isaac/icon.png'
         },
@@ -697,12 +697,18 @@ async function init() {
                     }
                 </style>
             </head>
-            <body>amaa  
+            <body>
                 <iframe src="${url}" sandbox="allow-scripts allow-forms allow-pointer-lock allow-same-origin"></iframe>
             </body>
             </html>
         `);
         doc.close();
+
+        const link = doc.createElement("link");
+        link.rel = "icon";
+        link.href = preset.favicon + "?v=" + Date.now();
+        doc.head.appendChild(link);
+
     }
 window.openSite = openSite;
 
