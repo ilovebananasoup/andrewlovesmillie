@@ -330,7 +330,7 @@ body {
 import { openDB } from 'https://unpkg.com/idb?module';
 
 document.addEventListener('keydown', async (e) => {
-    if (e.altKey && e.key === '[') {
+    if (e.altKey && e.key === 'p') {
         if (!confirm('Clear all stored data?')) return;
         indexedDB.deleteDatabase('zeepzorp');
         location.reload();
@@ -398,7 +398,7 @@ async function init() {
             img: 'https://andrewlovesmillie.com/basketball-stars/icon.png'
         },
         {
-            name: 'Binding of Isaac',
+            name: 'The Binding of Isaac',
             url: 'https://andrewlovesmillie.com/binding-of-isaac',
             img: 'https://andrewlovesmillie.com/binding-of-isaac/icon.png'
         },
@@ -562,6 +562,56 @@ async function init() {
             url: 'https://andrewlovesmillie.com/webfishing',
             img: 'https://andrewlovesmillie.com/webfishing/icon.png'
         },
+        {
+            name: '3Dash',
+            url: 'https://andrewlovesmillie.com/3dash',
+            img: 'https://andrewlovesmillie.com/3dash/icon.png'
+        },
+        {
+            name: 'Amanda the Adventurer',
+            url: 'https://andrewlovesmillie.com/amanda-the-adventurer',
+            img: 'https://andrewlovesmillie.com/amanda-the-adventurer/icon.png'
+        },
+        {
+            name: 'Bloodmoney',
+            url: 'https://andrewlovesmillie.com/bloodmoney',
+            img: 'https://andrewlovesmillie.com/bloodmoney/icon.png'
+        },
+        {
+            name: 'Drift Boss',
+            url: 'https://andrewlovesmillie.com/drift-boss',
+            img: 'https://andrewlovesmillie.com/drift-boss/icon.png'
+        },
+        {
+            name: 'Idle Breakout',
+            url: 'https://andrewlovesmillie.com/idle-breakout',
+            img: 'https://andrewlovesmillie.com/idle-breakout/icon.png'
+        },
+        {
+            name: 'Minecraft 1.11.2',
+            url: 'https://andrewlovesmillie.com/minecraft-1.11.2',
+            img: 'https://andrewlovesmillie.com/minecraft-1.11.2/icon.png'
+        },
+        {
+            name: 'Minecraft 1.20.1',
+            url: 'https://andrewlovesmillie.com/minecraft-1.20.1',
+            img: 'https://andrewlovesmillie.com/minecraft-1.20.1/icon.png'
+        },
+        {
+            name: 'Paper.io 2',
+            url: 'https://andrewlovesmillie.com/paper.io-2',
+            img: 'https://andrewlovesmillie.com/paper.io-2/icon.png'
+        },
+        {
+            name: 'Superhot',
+            url: 'https://andrewlovesmillie.com/superhot',
+            img: 'https://andrewlovesmillie.com/superhot/icon.png'
+        },
+        {
+            name: 'Ultrakill',
+            url: 'https://andrewlovesmillie.com/ultrakill',
+            img: 'https://andrewlovesmillie.com/ultrakill/icon.png'
+        },
     ];
 
 
@@ -648,11 +698,17 @@ async function init() {
                 </style>
             </head>
             <body>
-                <iframe src="${url}" sandbox="allow-scripts allow-forms allow-pointer-lock"></iframe>
+                <iframe src="${url}" sandbox="allow-scripts allow-forms allow-pointer-lock allow-same-origin"></iframe>
             </body>
             </html>
         `);
         doc.close();
+
+        const link = doc.createElement("link");
+        link.rel = "icon";
+        link.href = preset.favicon + "?v=" + Date.now();
+        doc.head.appendChild(link);
+
     }
 window.openSite = openSite;
 
