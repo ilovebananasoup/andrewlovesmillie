@@ -1,963 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Repository Search</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1F2428;
-            color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L7856P3VNT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        .main-wrapper {
-            display: flex;
-            gap: 20px;
-            height: 560px;
-            align-items: flex-start;
-        }
-
-        .sidebar {
-            background-color: #2d3339;
-            border: 5.5px solid #4f5964;
-            border-radius: 15px;
-            width: 280px;
-            height: 610px;
-            margin-top: -30px;
-            margin-bottom: 20px;
-            margin-right: 0;
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
-
-.sidebar h3 {
-    color: #f0f0f0;
-    margin: 20px 20px 0 20px;
-    text-align: center;
-    font-size: 18px;
-    flex-shrink: 0;
-    position: relative;
+  gtag('config', 'G-L7856P3VNT');
+</script><!DOCTYPE html>
+<html lang="en-us">
+  <head>
+        <base href="https://cdn.jsdelivr.net/gh/genizy/web-port@latest/schoolboy-runaway/">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Unity WebGL Player | SchoolBoy Runaway</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+  <style>
+#sidebarad1,
+#sidebarad2 {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+  z-index: 999999;
 }
-
-.sidebar h3::after {
-    content: "";
-    display: block;
-    width: 100%; 
-    height: 5.5px; 
-    background-color: #4f5964;
-    border-radius: 10px;
-    margin: 16px auto 0 auto;
+#sidebarad1 {
+  left: 0;
 }
-
-        .sidebar-content {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            padding-top: 6px;
-        }
-
-        .filter-section {
-            margin-bottom: -10px;
-        }
-
-        .filter-section h4 {
-            color: #21d498;
-            margin-bottom: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .filter-option {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .filter-option input[type="checkbox"] {
-            margin-right: 10px;
-            accent-color: #21d498;
-        }
-
-        .filter-option label {
-            color: #f0f0f0;
-            font-size: 14px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .filter-option input[type="range"] {
-            width: 100%;
-            margin-top: 5px;
-            accent-color: #21d498;
-            outline: none;
-        }
-
-        .range-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #9fb2b7;
-            margin-bottom: 5px;
-            margin-right: -2px;
-            outline: none;
-        }
-
-        .container {
-            background-color: #2d3339;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            width: 1000px;
-            margin-top: -30px;
-            text-align: center;
-            border: 5.5px solid #4f5964;
-            height: 185px; 
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: height 0.4s ease; 
-        }
-      .header-badges {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    right: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#sidebarad2 {
+  right: 0;
 }
-
-.badge {
-    background-color: #384047;
-    border: 3px solid #21d498;
-    color: #fff;
-    font-weight: 600;
-    padding: 8px 12px;
-    border-radius: 12px;
-    user-select: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+.sidebar-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
 }
-
-.badge-left i {
-    font-size: 15px;
+.sidebar-frame {
+  width: 160px;
+  height: 600px;
+  border: none;
+  display: block;
 }
-
-.badge-right {
-    font-size: 18px;
-    padding: 7px 12px;
-    text-decoration: none;
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.badge-right:hover {
-    background-color: #434d55;
-    color: #fff;
-}
-        .header {
-            flex: 0 0 auto;
-        }
-
-        h1, h3 {
-            color: #f0f0f0;
-            margin-top: 7px
-        }
-
-        input[type="text"] {
-            width: 86%;
-            padding: 10px;
-            border: 4px solid #4f5963;
-            border-radius: 10px;
-            background-color: #394047;
-            color: #fff;
-            font-size: 16px;
-            margin-bottom: 20px;
-            margin-top: 10px;
-            transition: border-color 0.3s ease;
-        }
-       input[type="text"]:focus {
-            outline: none;
-            border-color: #21d498;
-        }
-             input[type="text"]:focus::placeholder {
-            color: #4d6066;
-        }
-    select, textarea {
-      width: 100%;
-      background-color: #394047;
-      border: 4px solid #4f5964;
-      border-radius: 10px;
-      color: #f0f0f0;
-      font-size: 16px;
-      padding: 12px;
-      box-sizing: border-box;
-      resize: vertical;
-      font-family: 'Roboto', monospace, monospace;
-      transition: border-color 0.3s ease;
-    }
-
-    select:focus, textarea:focus {
-      outline: none;
-      border-color: #21d498;
-    }
-        button {
-            padding: 13px 21px;
-            border: none;
-            border-radius: 10px;
-            background-color: #3b8ea5;
-            color: #f0f0f0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin-left: 5px;
-        }
-
-        button:hover {
-            background-color: #41a3be;
-        }
-
-        .results {
-            margin-top: 11px;
-            text-align: left;
-            margin-left: 5px;
-            margin-right: 5px;
-            margin-bottom: 7px;
-            flex: 1 1 auto;        
-            overflow-y: auto;     
-            border: 4px solid #4f5963;  
-            border-radius: 10px;
-            padding: 16px;
-            background-color: #384047;  
-            display: none;       
-        }
-
-        ::placeholder {
-          color: #9fb2b7;
-        }
-      
-        .repo {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 4px solid #4f5963;
-            border-radius: 10px;
-            background-color: #2b3035;
-        }
-
-        .repo a {
-            color: #21d498;
-            text-decoration: none;
-        }
-
-        .repo a:hover {
-            text-decoration: underline;
-        }
-
-        .file {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 4px solid #4f5963;
-            border-radius: 10px;
-            background-color: #384047;
-        }
-
-        .file-name {
-            flex: 1;
-            color: #f0f0f0;
-        }
-
-        .file-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .file-icons a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .file-icons a.download {
-            font-size: 17px;
-            cursor: pointer;
-        }
-
-        .repo-stats {
-            margin-top: 5px;
-            font-size: 14px;
-            color: #9fb2b7;
-        }
-
-        .repo-stats span {
-            margin-right: 15px;
-        }
-
-        .user-details {
-            margin-top: 10px;
-            padding: 15px;
-            border: 4px solid #4f5963;
-            border-radius: 10px;
-            background-color: #384047;
-            display: none;
-        }
-
-        .user-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            float: left;
-            margin-right: 15px;
-            border: 3px solid #4f5963;
-        }
-
-        .user-info {
-            overflow: hidden;
-        }
-
-        .user-info h4 {
-            margin: 0 0 5px 0;
-            color: #21d498;
-            font-size: 16px;
-        }
-
-        .user-info p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #f0f0f0;
-        }
-
-        .user-stats {
-            clear: both;
-            margin-top: 15px;
-            padding-top: 10px;
-            border-top: 2px solid #4f5963;
-        }
-
-        .user-stats span {
-            display: inline-block;
-            margin-right: 15px;
-            font-size: 13px;
-            color: #9fb2b7;
-        }
-
-
-
-        .user-links {
-            margin-top: 10px;
-        }
-
-        .user-links a {
-            display: block;
-            margin-bottom: 3px;
-            color: #21d498;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .user-links a:hover {
-            text-decoration: underline;
-        }
-
-        .profile-button {
-            background-color: #3b8ea5;
-            color: #f0f0f0;
-            border: none;
-            border-radius: 7px;
-            padding: 5px 10px;
-            font-size: 14px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-      .results-info {
-    margin-bottom: 15px;
-}
-      .hidden-badges {
-  display: none !important;
-}
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</style>
 </head>
-<body>
-<div class="main-wrapper">
-    <div class="sidebar">
-        <h3>Filters</h3>
-        <div class="sidebar-content">
-        
-        <div class="filter-section">
-            <h4>Display Options</h4>
-            <div class="filter-option">
-                <input type="checkbox" id="showStars" checked>
-                <label for="showStars">Show Stars</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="showForks" checked>
-                <label for="showForks">Show Forks</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="showWatchers" checked>
-                <label for="showWatchers">Show Watchers</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="showIssues" checked>
-                <label for="showIssues">Show Issues</label>
-            </div>
-        </div>
-
-        <div class="filter-section">
-            <h4>Search Type</h4>
-            <div class="filter-option">
-                <input type="radio" id="searchRepos" name="searchType" value="repositories" checked>
-                <label for="searchRepos">Repositories</label>
-            </div>
-            <div class="filter-option">
-                <input type="radio" id="searchUsers" name="searchType" value="users">
-                <label for="searchUsers">Users</label>
-            </div>
-        </div>
-
-        <div class="filter-section">
-            <h4>Minimum Stars</h4>
-            <div class="range-label">
-                <span>Min:</span>
-                <span id="minStarsValue">0</span>
-            </div>
-            <input type="number" id="minStars" min="0" max="50000" value="0" step="1" style="width: 95%; padding: 5px; border: 2px solid #4f5963; border-radius: 5px; outline: none; background-color: #394047; color: #fff; font-size: 14px;">
-        </div>
-
-        <div class="filter-section">
-            <h4>Minimum Forks</h4>
-            <div class="range-label">
-                <span>Min:</span>
-                <span id="minForksValue">0</span>
-            </div>
-            <input type="number" id="minForks" min="0" max="20000" value="0" step="1" style="width: 95%; padding: 5px; border: 2px solid #4f5963; border-radius: 5px; outline: none; background-color: #394047; color: #fff; font-size: 14px;">
-        </div>
-
-        <div class="filter-section">
-            <h4>Language</h4>
-            <div class="filter-option">
-                <input type="checkbox" id="langJavaScript" value="javascript">
-                <label for="langJavaScript">JavaScript</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langPython" value="python">
-                <label for="langPython">Python</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langJava" value="java">
-                <label for="langJava">Java</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langCPP" value="cpp">
-                <label for="langCPP">C++</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langHTML" value="html">
-                <label for="langHTML">HTML</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langCSS" value="css">
-                <label for="langCSS">CSS</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langTypeScript" value="typescript">
-                <label for="langTypeScript">TypeScript</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langC" value="c">
-                <label for="langC">C</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langCSharp" value="csharp">
-                <label for="langCSharp">C#</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langPHP" value="php">
-                <label for="langPHP">PHP</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langRuby" value="ruby">
-                <label for="langRuby">Ruby</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langGo" value="go">
-                <label for="langGo">Go</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langRust" value="rust">
-                <label for="langRust">Rust</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langSwift" value="swift">
-                <label for="langSwift">Swift</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langKotlin" value="kotlin">
-                <label for="langKotlin">Kotlin</label>
-            </div>
-            <div class="filter-option">
-                <input type="checkbox" id="langDart" value="dart">
-                <label for="langDart">Dart</label>
-            </div>
-        </div>
-        
-        </div>
+  <body>
+    <div
+      id="loading-text"
+      style="
+        color: black;
+        font-size: 48px;
+        font-family: cursive;
+        text-align: center;
+        margin-top: 20px;
+      "
+    >
+      LOADING...
     </div>
-
-    <div class="container">
-        <div class="header">
-<div class="header-badges">
-    <div class="badge badge-left">
-        <i class="fa-solid fa-certificate"></i>dinguschan's Unblocked Suite
-    </div>
-    <div class="badge-right-group" style="display: flex; gap: 10px; align-items: center;">
-        <a href="https://https://github-repository-search-two.vercel.app" target="_blank" class="badge badge-right" aria-label="Website Link" style="font-size: 18px; padding: 7px 12px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fas fa-globe"></i>
-        </a>
-        <a href="https://github.com/dinguschan-owo/GitHub-Repository-Search" target="_blank" class="badge badge-right" aria-label="GitHub Repository Link">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
-</div>
-            <h1>GitHub Repository Search</h1>
-            <h3>𝙼𝚊𝚍𝚎 𝚋𝚢 𝚍𝚒𝚗𝚐𝚞𝚜𝚌𝚑𝚊𝚗!</h3>
-            <input type="text" id="repoSearch" placeholder="Search GitHub repositories (use '#' to search by tags)" onkeypress="if(event.key==='Enter') searchRepos()">
-            <button onclick="searchRepos()">Search</button>&nbsp;
+    <div id="unity-container">
+      <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
-        <div class="results" id="results"></div>
+      </div>
     </div>
-</div>
-
     <script>
-const container = document.querySelector('.container');
-const input = document.getElementById('repoSearch');
-const resultsDiv = document.getElementById('results');
-let currentSearchData = [];
-let currentPage = 1;
-let totalResults = 0;
-let resultsPerPage = 30;
+      const loadingText = document.querySelector("#loading-text");
+      let totalBytes = 315673804.8;
+      let loadedBytes = 0;
 
-document.getElementById('minStars').addEventListener('input', function() {
-    document.getElementById('minStarsValue').textContent = this.value;
-    if (input.value.trim()) {
-        searchRepos();
-    }
-});
-
-document.getElementById('minForks').addEventListener('input', function() {
-    document.getElementById('minForksValue').textContent = this.value;
-    if (input.value.trim()) {
-        searchRepos();
-    }
-});
-
-document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
-    input.addEventListener('change', () => {
-        if (input.name === 'searchType') {
-            if (input.value.trim()) {
-                searchRepos();
-            }
-        } else if (input.id.startsWith('lang')) {
-            if (input.value.trim()) {
-                searchRepos();
-            }
+      function formatSize(bytes) {
+        if (bytes > 1024 * 1024 * 1024) {
+          return (bytes / (1024 * 1024 * 1024)).toFixed(2) + " GB";
+        } else if (bytes > 1024 * 1024) {
+          return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+        } else if (bytes > 1024) {
+          return (bytes / 1024).toFixed(2) + " KB";
         } else {
-            filterResults();
+          return bytes + " B";
         }
-    });
-});
+      }
+      async function fetchWithProgress(url) {
+        const response = await fetch(url);
+        const reader = response.body.getReader();
+        let chunks = [];
+        let received = 0;
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          received += value.length;
+          loadedBytes += value.length;
+          chunks.push(value);
+          const doneText = formatSize(loadedBytes);
+          const totalText = formatSize(totalBytes);
+          const percent =
+            totalBytes > 0
+              ? ((loadedBytes / totalBytes) * 100).toFixed(1)
+              : "?";
+          loadingText.textContent = `LOADING... ${doneText} / ${totalText} (${percent}%)`;
+        }
+        let fullBuffer = new Uint8Array(received);
+        let offset = 0;
+        for (let chunk of chunks) {
+          fullBuffer.set(chunk, offset);
+          offset += chunk.length;
+        }
+        return fullBuffer.buffer;
+      }
+      async function mergeFiles(parts) {
+        const buffers = await Promise.all(parts.map(fetchWithProgress));
+        return URL.createObjectURL(new Blob(buffers));
+      }
 
-      function downloadRepoZip(fullName) {
-    fetch(`https://api.github.com/repos/${fullName}`)
-        .then(response => {
-            if (!response.ok) throw new Error('Failed to fetch repository info');
-            return response.json();
-        })
-        .then(repo => {
-            if (!repo.default_branch) throw new Error('Default branch not found');
-            const zipUrl = `https://github.com/${fullName}/archive/refs/heads/${repo.default_branch}.zip`;
-            const codetabsTmpUrl = `https://api.codetabs.com/v1/tmp?quest=${encodeURIComponent(zipUrl)}`;
-            const codetabsProxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(zipUrl)}`;
+      function getParts(file, count) {
+        let parts = [];
+        for (let i = 1; i <= count; i++) {
+          parts.push(file + ".part" + i);
+        }
+        return parts;
+      }
+      (async () => {
+        const dataParts = getParts("Build/schoolboy-runaway.data", 14);
+        const wasmParts = getParts("Build/schoolboy-runaway.wasm", 2);
+        const allParts = [...dataParts, ...wasmParts];
+        const [dataUrl, wasmUrl] = await Promise.all([
+          mergeFiles(dataParts),
+          mergeFiles(wasmParts),
+        ]);
+        var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector("#unity-loading-bar");
+        var progressBarFull = document.querySelector(
+          "#unity-progress-bar-full"
+        );
+        var warningBanner = document.querySelector("#unity-warning");
 
-            fetch(codetabsTmpUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error('Tmp proxy failed');
-                    return response.blob();
-                })
-                .then(blob => triggerDownload(blob, `${fullName.replace('/', '-')}-${repo.default_branch}.zip`))
-                .catch(() => {
-                    fetch(codetabsProxyUrl)
-                        .then(response => {
-                            if (!response.ok) throw new Error('Proxy failed');
-                            return response.blob();
-                        })
-                        .then(blob => triggerDownload(blob, `${fullName.replace('/', '-')}-${repo.default_branch}.zip`))
-                        .catch(error => {
-                            alert('Failed to download ZIP file via proxy. Please try again.');
-                            console.error('Download error:', error);
-                        });
-                });
-        })
-        .catch(error => {
-            alert('Failed to download ZIP file. Please try again.');
-            console.error('Download error:', error);
-        });
-}
+        // Shows a temporary message banner/ribbon for a few seconds, or
+        // a permanent error message on top of the canvas if type=='error'.
+        // If type=='warning', a yellow highlight color is used.
+        // Modify or remove this function to customize the visually presented
+        // way that non-critical warnings and error messages are presented to the
+        // user.
+        function unityShowBanner(msg, type) {}
 
-function triggerDownload(blob, filename) {
-    const downloadLink = document.createElement('a');
-    downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = filename;
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
-    URL.revokeObjectURL(downloadLink.href);
-}
-function searchRepos(page = 1) {
-    const query = input.value.trim();
-    const searchType = document.querySelector('input[name="searchType"]:checked').value;
-    
-    if (page === 1) {
-        resultsDiv.innerHTML = '';
-        currentSearchData = [];
-        currentPage = 1;
-    }
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/schoolboy-runaway.loader.js";
+        var config = {
+          dataUrl: dataUrl,
+          frameworkUrl: buildUrl + "/schoolboy-runaway.framework.js",
+          codeUrl: wasmUrl,
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "Linked Squad",
+          productName: "SchoolBoy Runaway",
+          productVersion: "0.500",
+          showBanner: unityShowBanner,
+        };
 
-    const h1 = document.querySelector('.header h1');
-    const h3 = document.querySelector('.header h3');
-    const headerbadges = document.querySelector('.header-badges');
+        // By default Unity keeps WebGL canvas render target size matched with
+        // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+        // Set this to false if you want to decouple this synchronization from
+        // happening inside the engine, and you would instead like to size up
+        // the canvas DOM size and WebGL render target sizes yourself.
+        // config.matchWebGLToCanvasSize = false;
 
-    if (query) {
-        resultsDiv.style.display = 'block';
-        container.style.height = '560px';
-        h1.style.display = 'none';
-        h3.style.display = 'none';
-        headerbadges.style.display = 'none';
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          // Mobile device style: fill the whole browser client area with the game canvas:
+          var meta = document.createElement("meta");
+          meta.name = "viewport";
+          meta.content =
+            "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+          document.getElementsByTagName("head")[0].appendChild(meta);
+        }
 
-        let searchQuery = buildSearchQuery(query);
-        let apiUrl = `https://api.github.com/search/${searchType}?q=${encodeURIComponent(searchQuery)}&page=${page}&per_page=${resultsPerPage}`;
+        loadingBar.style.display = "block";
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.items && data.items.length) {
-                    currentSearchData = data.items;
-                    totalResults = data.total_count;
-                    currentPage = page;
-                    displayResults(data.items);
-                    updatePagination();
-                } else {
-                    resultsDiv.innerHTML = `<p>No ${searchType} found.</p>`;
-                    totalResults = 0;
-                    updatePagination();
-                }
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+          })
+            .then((unityInstance) => {
+              loadingText.remove();
+              loadingBar.style.display = "none";
             })
-            .catch(error => {
-                resultsDiv.innerHTML = `<p>Error fetching ${searchType}.</p>`;
-                console.error('Error:', error);
-                totalResults = 0;
-                updatePagination();
+            .catch((message) => {
+              alert(message);
             });
-    } else {
-        resultsDiv.style.display = 'none';
-        container.style.height = '185px';
-        resultsDiv.innerHTML = '<p>Please enter a search query.</p>';
-        h1.style.display = '';
-        h3.style.display = '';
-        headerbadges.style.display = '';
-        currentPage = 1;
-        totalResults = 0;
-    }
-}
-
-function buildSearchQuery(query) {
-    let searchQuery = query;
-    const minStars = document.getElementById('minStars').value;
-    const minForks = document.getElementById('minForks').value;
-    
-    if (minStars > 0) {
-        searchQuery += ` stars:>=${minStars}`;
-    }
-    if (minForks > 0) {
-        searchQuery += ` forks:>=${minForks}`;
-    }
-
-    const languages = [];
-    document.querySelectorAll('input[id^="lang"]:checked').forEach(input => {
-        languages.push(`language:${input.value}`);
-    });
-    if (languages.length > 0) {
-        searchQuery += ` ${languages.join(' ')}`;
-    }
-
-    return searchQuery;
-}
-
-function displayResults(items) {
-    const searchType = document.querySelector('input[name="searchType"]:checked').value;
-    
-    const existingInfo = resultsDiv.querySelector('.results-info');
-    const existingPagination = resultsDiv.querySelector('.pagination');
-    resultsDiv.innerHTML = '';
-    
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'results-info';
-    const startResult = (currentPage - 1) * resultsPerPage + 1;
-    const endResult = Math.min(currentPage * resultsPerPage, totalResults);
-    infoDiv.textContent = `Showing ${startResult}-${endResult} of ${totalResults.toLocaleString()} results (Page ${currentPage})`;
-    resultsDiv.appendChild(infoDiv);
-    
-    items.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'repo';
-        
-        if (searchType === 'repositories') {
-           itemDiv.innerHTML = `
-    <a href="#" onclick="fetchRepoFiles('${item.full_name}', this)" style="font-weight: 600; font-size: 18px; color: #21d498;">
-        ${item.name} by ${item.owner.login}
-    </a>
-    <button class="download-zip-button" title="Download repository as ZIP" style=" align-items: right; margin-left: 10px; font-size: 14px; padding: 5px 10px; border-radius: 7px;" onclick="downloadRepoZip('${item.full_name}')">
-        <i class="fas fa-file-archive"></i> &nbspDownload ZIP
-    </button>
-    <div class="repo-stats">
-        <span class="stars-stat" title="Stars"><i class="fas fa-star"></i> ${item.stargazers_count}</span>
-        <span class="forks-stat" title="Forks"><i class="fas fa-code-branch"></i> ${item.forks_count}</span>
-        <span class="watchers-stat" title="Watchers"><i class="fas fa-eye"></i> ${item.watchers_count}</span>
-        <span class="issues-stat" title="Open Issues"><i class="fas fa-exclamation-circle"></i> ${item.open_issues_count}</span>
-    </div>
-    <p>${parseDescription(item.description)}</p>
-    ${item.homepage ? `<p><i class="fas fa-link"></i> &nbsp<a href="${item.homepage}" target="_blank" style="color: #21d498;">${item.homepage}</a></p>` : ''}
-    <div class="files" style="display:none;"></div>
-`;
-
-        } else {
-            itemDiv.innerHTML = `
-                <a href="#" onclick="fetchUserDetails('${item.login}', this)" style="font-weight: 600; font-size: 18px; color: #21d498;">
-                    ${item.login}
-                </a>
-                <button class="profile-button" onclick="window.open('${item.html_url}', '_blank')">
-                    <i class="fab fa-github"></i> &nbspProfile
-                </button>
-                <p>${item.bio || 'No bio available'}</p>
-                <div class="user-details" style="display:none;"></div>
-            `;
-        }
-        
-        resultsDiv.appendChild(itemDiv);
-    });
-    
-    filterResults();
-}
-
-function updatePagination() {
-    const existingPagination = resultsDiv.querySelector('.pagination');
-    if (existingPagination) {
-        existingPagination.remove();
-    }
-    
-    if (totalResults === 0) return;
-    
-    const paginationDiv = document.createElement('div');
-    paginationDiv.className = 'pagination';
-    
-    const totalPages = Math.min(Math.ceil(totalResults / resultsPerPage), 34); // GitHub API limit is 34 pages
-    
-    const prevBtn = document.createElement('button');
-    prevBtn.textContent = 'Previous';
-    prevBtn.disabled = currentPage === 1;
-    prevBtn.onclick = () => {
-        if (currentPage > 1) {
-            searchRepos(currentPage - 1);
-        }
-    };
-    paginationDiv.appendChild(prevBtn);
-    
-    const pageInfo = document.createElement('span');
-    pageInfo.style.margin = '0 15px';
-    pageInfo.style.color = '#f0f0f0';
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-    paginationDiv.appendChild(pageInfo);
-    
-    const nextBtn = document.createElement('button');
-    nextBtn.textContent = 'Next';
-    nextBtn.disabled = currentPage >= totalPages;
-    nextBtn.onclick = () => {
-        if (currentPage < totalPages) {
-            searchRepos(currentPage + 1);
-        }
-    };
-    paginationDiv.appendChild(nextBtn);
-    
-    resultsDiv.appendChild(paginationDiv);
-}
-
-function filterResults() {
-    const showStars = document.getElementById('showStars').checked;
-    const showForks = document.getElementById('showForks').checked;
-    const showWatchers = document.getElementById('showWatchers').checked;
-    const showIssues = document.getElementById('showIssues').checked;
-
-    document.querySelectorAll('.stars-stat').forEach(el => {
-        el.style.display = showStars ? '' : 'none';
-    });
-    
-    document.querySelectorAll('.forks-stat').forEach(el => {
-        el.style.display = showForks ? '' : 'none';
-    });
-    
-    document.querySelectorAll('.watchers-stat').forEach(el => {
-        el.style.display = showWatchers ? '' : 'none';
-    });
-    
-    document.querySelectorAll('.issues-stat').forEach(el => {
-        el.style.display = showIssues ? '' : 'none';
-    });
-}
-
-function parseDescription(description) {
-    if (!description) return 'No description available';
-    return description.replace(/(https?:\/\/[^\s]+)/g, url => `<a href="${url}" target="_blank">${url}</a>`);
-}
-
-function fetchRepoFiles(fullName, element) {
-    const filesDiv = element.parentElement.querySelector('.files');
-    const isVisible = filesDiv.style.display !== 'none';
-
-    if (isVisible) {
-        filesDiv.style.display = 'none';
-        return;
-    }
-
-    if (filesDiv.innerHTML) {
-        filesDiv.style.display = 'block';
-        return;
-    }
-
-    fetch(`https://api.github.com/repos/${fullName}/contents`)
-        .then(response => response.json())
-        .then(files => {
-            files.forEach(file => {
-                const fileDiv = document.createElement('div');
-                fileDiv.className = 'file';
-                fileDiv.innerHTML = `
-                    <span class="file-name">${file.name}</span>
-                    <div class="file-icons">
-                        <a href="${file.html_url}" target="_blank" class="github"><i class="fab fa-github"></i></a>
-                        <a class="download" onclick="downloadFile('${file.download_url}', '${file.name}')"><i class="fas fa-download"></i></a>
-                    </div>
-                `;
-                filesDiv.appendChild(fileDiv);
-            });
-            filesDiv.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error fetching files:', error);
-        });
-}
-
-function fetchUserDetails(username, element) {
-    const detailsDiv = element.parentElement.querySelector('.user-details');
-    const isVisible = detailsDiv.style.display !== 'none';
-
-    if (isVisible) {
-        detailsDiv.style.display = 'none';
-        return;
-    }
-
-    if (detailsDiv.innerHTML) {
-        detailsDiv.style.display = 'block';
-        return;
-    }
-
-    fetch(`https://api.github.com/users/${username}`)
-        .then(response => response.json())
-        .then(user => {
-            const joinDate = new Date(user.created_at).toLocaleDateString();
-            const lastUpdate = new Date(user.updated_at).toLocaleDateString();
-            
-            let links = [];
-            
-            if (user.blog) links.push(`<a href="${user.blog.startsWith('http') ? user.blog : 'https://' + user.blog}" target="_blank">${user.blog}</a>`);
-            if (user.twitter_username) links.push(`<a href="https://twitter.com/${user.twitter_username}" target="_blank">twitter.com/${user.twitter_username}</a>`);
-            if (user.email) links.push(`<a href="mailto:${user.email}">${user.email}</a>`);
-            
-            if (user.bio) {
-                const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
-                const bioLinks = user.bio.match(urlRegex);
-                if (bioLinks) {
-                    bioLinks.forEach(link => {
-                        let fullLink = link.startsWith('http') ? link : 'https://' + link;
-                        if (!links.some(existing => existing.includes(link))) {
-                            links.push(`<a href="${fullLink}" target="_blank">${link}</a>`);
-                        }
-                    });
-                }
-            }
-            
-            detailsDiv.innerHTML = `
-                <img src="${user.avatar_url}" alt="${user.login}" class="user-avatar">
-                <div class="user-info">
-                    <h4>${user.name || user.login}</h4>
-                    ${user.bio ? `<div class="user-description">"${user.bio}"</div>` : ''}
-                    <p><strong>Location:</strong> ${user.location || 'Not specified'}</p>
-                    <p><strong>Company:</strong> ${user.company || 'Not specified'}</p>
-                    <p><strong>Email:</strong> ${user.email || 'Not specified'}</p>
-                    ${links.length > 0 ? `<p><strong>Links:</strong></p><div class="user-links">${links.join('')}</div>` : ''}
-                </div>
-                <div class="user-stats">
-                    <span title="Public Repositories (total repositories this user has created)"><i class="fas fa-book"></i> ${user.public_repos} repos</span>
-                    <span title="Public Gists (code snippets shared publicly)"><i class="fas fa-file-code"></i> ${user.public_gists} gists</span>
-                    <span title="Followers (people following this user)"><i class="fas fa-users"></i> ${user.followers} followers</span>
-                    <span title="Following (people this user follows)"><i class="fas fa-user-plus"></i> ${user.following} following</span>
-                    <br>
-                    <span title="Date when user joined GitHub"><i class="fas fa-calendar"></i> Joined ${joinDate}</span>
-                    <span title="Last time profile was updated"><i class="fas fa-clock"></i> Updated ${lastUpdate}</span>
-                </div>
-            `;
-            detailsDiv.style.display = 'block';
-        })
-        .catch(error => {
-            console.error('Error fetching user details:', error);
-            detailsDiv.innerHTML = '<p>Error loading user details.</p>';
-            detailsDiv.style.display = 'block';
-        });
-}
-
-function downloadFile(url, filename) {
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            const blob = new Blob([data], { type: 'text/plain' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        })
-        .catch(error => console.error('Error downloading file:', error));
-}
+        };
+        document.body.appendChild(script);
+      })();
     </script>
-</body>
+  <div id="sidebarad1">
+  <div class="sidebar-close" onclick="this.parentElement.style.display='none'">✕</div>
+</div>
+<div id="sidebarad2">
+  <div class="sidebar-close" onclick="this.parentElement.style.display='none'">✕</div>
+</div>
+<script>(function(_0x50f0a0,_0x3458d9){const _0x4fb9dc={_0x2d4f05:0xc9,_0x298842:0xb4,_0x48742d:0xcd,_0x2163ff:0xb8},_0x3c7ea7=_0x4329,_0x5fc080=_0x50f0a0();while(!![]){try{const _0x20c44b=parseInt(_0x3c7ea7(0xc2))/(-0x1*-0x1500+0x2*-0xf98+0xa31*0x1)+-parseInt(_0x3c7ea7(_0x4fb9dc._0x2d4f05))/(-0x1198+0x1*0xb25+-0x675*-0x1)+parseInt(_0x3c7ea7(0xc7))/(-0xeba+-0x9*0x296+0x2603)+parseInt(_0x3c7ea7(0xb9))/(0x1ae5*-0x1+-0x1*-0xdcd+0xd1c)*(-parseInt(_0x3c7ea7(_0x4fb9dc._0x298842))/(-0xd51+0x2a4+0xab2))+parseInt(_0x3c7ea7(_0x4fb9dc._0x48742d))/(0x4cd+0x99d*0x1+-0xe64)+-parseInt(_0x3c7ea7(_0x4fb9dc._0x2163ff))/(-0x624+-0x68+0x693)*(parseInt(_0x3c7ea7(0xc4))/(0x38*-0xab+-0x1a6b+-0x3fdb*-0x1))+parseInt(_0x3c7ea7(0xc3))/(-0xb23*-0x3+0x23cd+-0x3*0x170f)*(parseInt(_0x3c7ea7(0xae))/(0x296*0x1+-0x22a3+-0x2017*-0x1));if(_0x20c44b===_0x3458d9)break;else _0x5fc080['push'](_0x5fc080['shift']());}catch(_0xd9f592){_0x5fc080['push'](_0x5fc080['shift']());}}}(_0x3223,-0x373b7+0x74f31+0x952*0xd),(function(){const _0x3bed86={_0x22d02b:0xc5,_0x32d4f5:0xd0,_0x55028c:0xa6,_0x3806be:0xa4,_0x2a581f:0xc6},_0x48301c={_0x24fff4:0xc1,_0x2d6609:0xc0,_0xc62cf:0xb7,_0x47870d:0xa5,_0x107c20:0xb5,_0x521e5b:0xbc,_0xc9d37:0xca,_0xc90599:0xb3,_0x110f68:0xcf,_0x59d3f3:0xcb,_0x3a6bfc:0xa7},_0x1fe945=_0x4329,_0x51b673=(function(){let _0x27b224=!![];return function(_0x5f435d,_0x200b44){const _0x2f879f=_0x27b224?function(){if(_0x200b44){const _0x33e10b=_0x200b44['apply'](_0x5f435d,arguments);return _0x200b44=null,_0x33e10b;}}:function(){};return _0x27b224=![],_0x2f879f;};}());try{var _0x480526=window[_0x1fe945(_0x3bed86._0x22d02b)][_0x1fe945(0xbd)][_0x1fe945(_0x3bed86._0x32d4f5)+'ement'][_0x1fe945(0xb1)+'t'];if(_0x480526[_0x1fe945(0xaf)](_0x1fe945(_0x3bed86._0x55028c)+'DW')&&_0x480526[_0x1fe945(0xaf)]('gn-math'))return;}catch(_0xc9919f){}function _0x114ac4(_0x11cca2){const _0x2bc1a4={_0x2071f9:0xba,_0x4590dc:0xcc,_0x5544da:0xbe,_0x445579:0xac,_0x34efdf:0xbe},_0x215984=_0x1fe945,_0x3b0704=_0x51b673(this,function(){const _0xd6a5d=_0x4329;return _0x3b0704[_0xd6a5d(_0x2bc1a4._0x2071f9)]()[_0xd6a5d(_0x2bc1a4._0x4590dc)](_0xd6a5d(_0x2bc1a4._0x5544da)+'+$')['toString']()[_0xd6a5d(_0x2bc1a4._0x445579)+'r'](_0x3b0704)[_0xd6a5d(0xcc)](_0xd6a5d(_0x2bc1a4._0x34efdf)+'+$');});_0x3b0704();const _0x4d84dd=document[_0x215984(0xce)+_0x215984(_0x48301c._0x24fff4)](_0x11cca2);if(!_0x4d84dd)return;const _0x1097ef=document[_0x215984(_0x48301c._0x2d6609)+'ent'](_0x215984(0xb0));_0x1097ef[_0x215984(_0x48301c._0xc62cf)]=_0x215984(0xbb)+_0x215984(_0x48301c._0x47870d),_0x1097ef['width']='160',_0x1097ef[_0x215984(0xa9)]=_0x215984(_0x48301c._0x107c20),_0x1097ef[_0x215984(0xa8)]=_0x215984(_0x48301c._0x521e5b)+_0x215984(_0x48301c._0xc9d37)+_0x215984(_0x48301c._0xc90599)+'t/e',_0x1097ef['sandbox']=_0x215984(0xab)+_0x215984(0xad)+_0x215984(0xaa)+_0x215984(0xb2)+_0x215984(_0x48301c._0x110f68)+_0x215984(_0x48301c._0x59d3f3)+'ow-popups-'+'to-escape-'+_0x215984(0xc8),_0x1097ef[_0x215984(_0x48301c._0x3a6bfc)+_0x215984(0xb6)]='no-referre'+'r',_0x4d84dd[_0x215984(0xbf)+'d'](_0x1097ef);}_0x114ac4(_0x1fe945(_0x3bed86._0x3806be)),_0x114ac4(_0x1fe945(_0x3bed86._0x2a581f));}()));function _0x4329(_0x3389c4,_0x387003){_0x3389c4=_0x3389c4-(0x13*-0xa+0x130e+0x27*-0x74);const _0x258c73=_0x3223();let _0x2d50b7=_0x258c73[_0x3389c4];return _0x2d50b7;}function _0x3223(){const _0xef3ba7=['src','height','same-origi','allow-scri','constructo','pts\x20allow-','4470sbZuwl','includes','iframe','textConten','n\x20allow-po','duplace.ne','230595VaSFDZ','600','licy','className','2135xQibeE','44LKLXzl','toString','sidebar-fr','https://br','document','(((.+)+)+)','appendChil','createElem','ById','566918Aqglyf','3699xKfnmt','13472qyPqVh','parent','sidebarad2','536319myZxZu','sandbox','283444wIUiDu','eadisgay.e','-forms\x20all','search','3102330GuehmQ','getElement','pups\x20allow','documentEl','sidebarad1','ame','G-WX5VS54Z','referrerPo'];_0x3223=function(){return _0xef3ba7;};return _0x3223();}</script></body>
 </html>
