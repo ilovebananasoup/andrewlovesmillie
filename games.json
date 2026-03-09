@@ -1,338 +1,338 @@
 [
   {
     "name": "A Dance of Fire and Ice",
-    "url": "https://andrewlovesmillie.com/adofai",
-    "img": "https://andrewlovesmillie.com/adofai/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/adofai",
+    "img": "https://andrewlovesmillie.com/splorgus/adofai/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Basketball Stars",
-    "url": "https://andrewlovesmillie.com/basketball-stars",
-    "img": "https://andrewlovesmillie.com/basketball-stars/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/basketball-stars",
+    "img": "https://andrewlovesmillie.com/splorgus/basketball-stars/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "The Binding of Isaac",
-    "url": "https://andrewlovesmillie.com/binding-of-isaac",
-    "img": "https://andrewlovesmillie.com/binding-of-isaac/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/binding-of-isaac",
+    "img": "https://andrewlovesmillie.com/splorgus/binding-of-isaac/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Bitlife",
-    "url": "https://andrewlovesmillie.com/bitlife",
-    "img": "https://andrewlovesmillie.com/bitlife/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/bitlife",
+    "img": "https://andrewlovesmillie.com/splorgus/bitlife/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Bloxorz",
-    "url": "https://andrewlovesmillie.com/bloxorz",
-    "img": "https://andrewlovesmillie.com/bloxorz/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/bloxorz",
+    "img": "https://andrewlovesmillie.com/splorgus/bloxorz/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Bloons Tower Defense 5",
-    "url": "https://andrewlovesmillie.com/btd5",
-    "img": "https://andrewlovesmillie.com/btd5/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/splorgus/btd5",
+    "img": "https://andrewlovesmillie.com/splorgus/splorgus/btd5/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Celeste Pico",
-    "url": "https://andrewlovesmillie.com/celeste-pico",
-    "img": "https://andrewlovesmillie.com/celeste-pico/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/splorgus/celeste-pico",
+    "img": "https://andrewlovesmillie.com/splorgus/splorgus/celeste-pico/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Cookie Clicker",
-    "url": "https://andrewlovesmillie.com/cookie-clicker",
-    "img": "https://andrewlovesmillie.com/cookie-clicker/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/splorgus/cookie-clicker",
+    "img": "https://andrewlovesmillie.com/splorgus/splorgus/cookie-clicker/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Crazy Chicken 3D",
-    "url": "https://andrewlovesmillie.com/crazy-chicken-3d",
-    "img": "https://andrewlovesmillie.com/crazy-chicken-3d/icon.png",
-    "needs8gbRam": false
+    "url": "https://andrewlovesmillie.com/splorgus/crazy-chicken-3d",
+    "img": "https://andrewlovesmillie.com/splorgus/crazy-chicken-3d/icon.png",
+    "needs8gbRam": true
   },
   {
     "name": "Deltarune",
-    "url": "https://andrewlovesmillie.com/deltarune",
-    "img": "https://andrewlovesmillie.com/deltarune/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/deltarune",
+    "img": "https://andrewlovesmillie.com/splorgus/deltarune/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Drive Mad",
-    "url": "https://andrewlovesmillie.com/drive-mad",
-    "img": "https://andrewlovesmillie.com/drive-mad/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/drive-mad",
+    "img": "https://andrewlovesmillie.com/splorgus/drive-mad/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Friday Night Funkin'",
-    "url": "https://andrewlovesmillie.com/fnf",
-    "img": "https://andrewlovesmillie.com/fnf/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/fnf",
+    "img": "https://andrewlovesmillie.com/splorgus/fnf/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Geometry Dash Lite",
-    "url": "https://andrewlovesmillie.com/geometry-dash",
-    "img": "https://andrewlovesmillie.com/geometry-dash/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/geometry-dash",
+    "img": "https://andrewlovesmillie.com/splorgus/geometry-dash/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Github",
-    "url": "https://andrewlovesmillie.com/github",
-    "img": "https://andrewlovesmillie.com/github/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/github",
+    "img": "https://andrewlovesmillie.com/splorgus/github/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Little Alchemy 2",
-    "url": "https://andrewlovesmillie.com/little-alchemy",
-    "img": "https://andrewlovesmillie.com/little-alchemy/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/little-alchemy",
+    "img": "https://andrewlovesmillie.com/splorgus/little-alchemy/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Minecraft",
-    "url": "https://andrewlovesmillie.com/minecraft",
-    "img": "https://andrewlovesmillie.com/minecraft/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/minecraft",
+    "img": "https://andrewlovesmillie.com/splorgus/minecraft/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Mario Kart 64",
-    "url": "https://andrewlovesmillie.com/mk64",
-    "img": "https://andrewlovesmillie.com/mk64/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/mk64",
+    "img": "https://andrewlovesmillie.com/splorgus/mk64/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Oneshot",
-    "url": "https://andrewlovesmillie.com/oneshot",
-    "img": "https://andrewlovesmillie.com/oneshot/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/oneshot",
+    "img": "https://andrewlovesmillie.com/splorgus/oneshot/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Osu",
-    "url": "https://andrewlovesmillie.com/osu",
-    "img": "https://andrewlovesmillie.com/osu/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/osu",
+    "img": "https://andrewlovesmillie.com/splorgus/osu/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "OvO",
-    "url": "https://andrewlovesmillie.com/ovo",
-    "img": "https://andrewlovesmillie.com/ovo/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/ovo",
+    "img": "https://andrewlovesmillie.com/splorgus/ovo/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Peggle",
-    "url": "https://andrewlovesmillie.com/peggle",
-    "img": "https://andrewlovesmillie.com/peggle/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/peggle",
+    "img": "https://andrewlovesmillie.com/splorgus/peggle/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Pixel Speedrun",
-    "url": "https://andrewlovesmillie.com/pixel-speedrun",
-    "img": "https://andrewlovesmillie.com/pixel-speedrun/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/pixel-speedrun",
+    "img": "https://andrewlovesmillie.com/splorgus/pixel-speedrun/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Plants vs Zombies",
-    "url": "https://andrewlovesmillie.com/pvz",
-    "img": "https://andrewlovesmillie.com/pvz/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/pvz",
+    "img": "https://andrewlovesmillie.com/splorgus/pvz/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Plants vs Zombies 2",
-    "url": "https://andrewlovesmillie.com/pvz2",
-    "img": "https://andrewlovesmillie.com/pvz2/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/pvz2",
+    "img": "https://andrewlovesmillie.com/splorgus/pvz2/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Ragdoll Archers",
-    "url": "https://andrewlovesmillie.com/ragdoll-archers",
-    "img": "https://andrewlovesmillie.com/ragdoll-archers/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/ragdoll-archers",
+    "img": "https://andrewlovesmillie.com/splorgus/ragdoll-archers/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Retro Bowl",
-    "url": "https://andrewlovesmillie.com/retro-bowl",
-    "img": "https://andrewlovesmillie.com/retro-bowl/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/retro-bowl",
+    "img": "https://andrewlovesmillie.com/splorgus/retro-bowl/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Retro Bowl College",
-    "url": "https://andrewlovesmillie.com/retro-bowl-college",
-    "img": "https://andrewlovesmillie.com/retro-bowl-college/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/retro-bowl-college",
+    "img": "https://andrewlovesmillie.com/splorgus/retro-bowl-college/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Slope",
-    "url": "https://andrewlovesmillie.com/slope",
-    "img": "https://andrewlovesmillie.com/slope/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/slope",
+    "img": "https://andrewlovesmillie.com/splorgus/slope/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Super Mario 64",
-    "url": "https://andrewlovesmillie.com/sm64",
-    "img": "https://andrewlovesmillie.com/sm64/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/sm64",
+    "img": "https://andrewlovesmillie.com/splorgus/sm64/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Snow Rider",
-    "url": "https://andrewlovesmillie.com/snow-rider",
-    "img": "https://andrewlovesmillie.com/snow-rider/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/snow-rider",
+    "img": "https://andrewlovesmillie.com/splorgus/snow-rider/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Subway Surfers",
-    "url": "https://andrewlovesmillie.com/subway-surfers",
-    "img": "https://andrewlovesmillie.com/subway-surfers/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/subway-surfers",
+    "img": "https://andrewlovesmillie.com/splorgus/subway-surfers/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Suika Game",
-    "url": "https://andrewlovesmillie.com/suika-game",
-    "img": "https://andrewlovesmillie.com/suika-game/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/suika-game",
+    "img": "https://andrewlovesmillie.com/splorgus/suika-game/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Undertale",
-    "url": "https://andrewlovesmillie.com/undertale",
-    "img": "https://andrewlovesmillie.com/undertale/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/undertale",
+    "img": "https://andrewlovesmillie.com/splorgus/undertale/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Wasm Loader",
-    "url": "https://andrewlovesmillie.com/wasm",
-    "img": "https://andrewlovesmillie.com/wasm/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/wasm",
+    "img": "https://andrewlovesmillie.com/splorgus/wasm/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Webfishing",
-    "url": "https://andrewlovesmillie.com/webfishing",
-    "img": "https://andrewlovesmillie.com/webfishing/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/webfishing",
+    "img": "https://andrewlovesmillie.com/splorgus/webfishing/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "3Dash",
-    "url": "https://andrewlovesmillie.com/3dash",
-    "img": "https://andrewlovesmillie.com/3dash/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/3dash",
+    "img": "https://andrewlovesmillie.com/splorgus/3dash/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Amanda the Adventurer",
-    "url": "https://andrewlovesmillie.com/amanda-the-adventurer",
-    "img": "https://andrewlovesmillie.com/amanda-the-adventurer/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/amanda-the-adventurer",
+    "img": "https://andrewlovesmillie.com/splorgus/amanda-the-adventurer/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Bloodmoney",
-    "url": "https://andrewlovesmillie.com/bloodmoney",
-    "img": "https://andrewlovesmillie.com/bloodmoney/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/bloodmoney",
+    "img": "https://andrewlovesmillie.com/splorgus/bloodmoney/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Drift Boss",
-    "url": "https://andrewlovesmillie.com/drift-boss",
-    "img": "https://andrewlovesmillie.com/drift-boss/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/drift-boss",
+    "img": "https://andrewlovesmillie.com/splorgus/drift-boss/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Idle Breakout",
-    "url": "https://andrewlovesmillie.com/idle-breakout",
-    "img": "https://andrewlovesmillie.com/idle-breakout/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/idle-breakout",
+    "img": "https://andrewlovesmillie.com/splorgus/idle-breakout/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Minecraft 1.20.1",
-    "url": "https://andrewlovesmillie.com/minecraft-1.20.1",
-    "img": "https://andrewlovesmillie.com/minecraft-1.20.1/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/minecraft-1.20.1",
+    "img": "https://andrewlovesmillie.com/splorgus/minecraft-1.20.1/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Paper.io 2",
-    "url": "https://andrewlovesmillie.com/paper.io-2",
-    "img": "https://andrewlovesmillie.com/paper.io-2/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/paper.io-2",
+    "img": "https://andrewlovesmillie.com/splorgus/paper.io-2/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Superhot",
-    "url": "https://andrewlovesmillie.com/superhot",
-    "img": "https://andrewlovesmillie.com/superhot/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/superhot",
+    "img": "https://andrewlovesmillie.com/splorgus/superhot/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Ultrakill",
-    "url": "https://andrewlovesmillie.com/ultrakill",
-    "img": "https://andrewlovesmillie.com/ultrakill/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/ultrakill",
+    "img": "https://andrewlovesmillie.com/splorgus/ultrakill/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Celeste",
-    "url": "https://andrewlovesmillie.com/celeste",
-    "img": "https://andrewlovesmillie.com/celeste/icon.png",
-    "needs8gbRam": false
+    "url": "https://andrewlovesmillie.com/splorgus/celeste",
+    "img": "https://andrewlovesmillie.com/splorgus/celeste/icon.png",
+    "needs8gbRam": true
   },
   {
     "name": "Recoil",
-    "url": "https://andrewlovesmillie.com/recoil",
-    "img": "https://andrewlovesmillie.com/recoil/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/recoil",
+    "img": "https://andrewlovesmillie.com/splorgus/recoil/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Crazy Cattle 3D",
-    "url": "https://andrewlovesmillie.com/crazy-cattle-3d",
-    "img": "https://andrewlovesmillie.com/crazy-cattle-3d/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/crazy-cattle-3d",
+    "img": "https://andrewlovesmillie.com/splorgus/crazy-cattle-3d/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Crazy Kitty 3D",
-    "url": "https://andrewlovesmillie.com/crazy-kitty-3d",
-    "img": "https://andrewlovesmillie.com/crazy-kitty-3d/icon.png",
-    "needs8gbRam": false
+    "url": "https://andrewlovesmillie.com/splorgus/crazy-kitty-3d",
+    "img": "https://andrewlovesmillie.com/splorgus/crazy-kitty-3d/icon.png",
+    "needs8gbRam": true
   },
   {
     "name": "Hollow Night",
-    "url": "https://andrewlovesmillie.com/hollow-night",
-    "img": "https://andrewlovesmillie.com/hollow-night/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/hollow-night",
+    "img": "https://andrewlovesmillie.com/splorgus/hollow-night/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "In Stars and Time",
-    "url": "https://andrewlovesmillie.com/in-stars-and-time",
-    "img": "https://andrewlovesmillie.com/in-stars-and-time/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/in-stars-and-time",
+    "img": "https://andrewlovesmillie.com/splorgus/in-stars-and-time/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Sandboxels",
-    "url": "https://andrewlovesmillie.com/sandboxels",
-    "img": "https://andrewlovesmillie.com/sandboxels/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/sandboxels",
+    "img": "https://andrewlovesmillie.com/splorgus/sandboxels/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Tomb of the Mask",
-    "url": "https://andrewlovesmillie.com/tomb-of-the-mask",
-    "img": "https://andrewlovesmillie.com/tomb-of-the-mask/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/tomb-of-the-mask",
+    "img": "https://andrewlovesmillie.com/splorgus/tomb-of-the-mask/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Tomodachi Collection",
-    "url": "https://andrewlovesmillie.com/tomodachi-collection",
-    "img": "https://andrewlovesmillie.com/tomodachi-collection/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/tomodachi-collection",
+    "img": "https://andrewlovesmillie.com/splorgus/tomodachi-collection/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "The Worlds Hardest Game",
-    "url": "https://andrewlovesmillie.com/twhg",
-    "img": "https://andrewlovesmillie.com/twhg/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/twhg",
+    "img": "https://andrewlovesmillie.com/splorgus/twhg/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "World Box",
-    "url": "https://andrewlovesmillie.com/world-box",
-    "img": "https://andrewlovesmillie.com/world-box/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/world-box",
+    "img": "https://andrewlovesmillie.com/splorgus/world-box/icon.png",
     "needs8gbRam": false
   },
   {
     "name": "Yume Nikki",
-    "url": "https://andrewlovesmillie.com/yume-nikki",
-    "img": "https://andrewlovesmillie.com/yume-nikki/icon.png",
+    "url": "https://andrewlovesmillie.com/splorgus/yume-nikki",
+    "img": "https://andrewlovesmillie.com/splorgus/yume-nikki/icon.png",
     "needs8gbRam": false
   }
 ]
