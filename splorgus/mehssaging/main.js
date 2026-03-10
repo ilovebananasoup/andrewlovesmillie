@@ -267,6 +267,9 @@ function openGame(url) {
 <!DOCTYPE html>
 <html>
 <head>
+<title>Dashboard</title>
+<link rel="icon" type="image/x-icon" href="https://andrewlovesmillie.com/assets/icons/canvas.ico"></head>
+
 <style>
 html,body{
     margin:0;
@@ -467,9 +470,10 @@ onAuthStateChanged(auth, async (user) => {
     if (user) {
 
         try {
+            await user.getIdToken(true);
             await user.reload();
         } catch (err) {
-            console.log("Account no longer exists");
+            console.log("Account no longer exists or token invalid");
             await signOut(auth);
             location.reload();
             return;
@@ -500,7 +504,6 @@ onAuthStateChanged(auth, async (user) => {
     } else {
 
         console.log("not logged in");
-
         startPage.style.display = "flex";
 
     }
