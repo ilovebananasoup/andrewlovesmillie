@@ -291,7 +291,7 @@
     "name": "Hollow Night",
     "url": "https://andrewlovesmillie.com/splorgus/hollow-night",
     "img": "https://andrewlovesmillie.com/splorgus/hollow-night/icon.png",
-    "needs8gbRam": false
+    "needs8gbRam": true
   },
   {
     "name": "In Stars and Time",
@@ -333,6 +333,12 @@
     "name": "Yume Nikki",
     "url": "https://andrewlovesmillie.com/splorgus/yume-nikki",
     "img": "https://andrewlovesmillie.com/splorgus/yume-nikki/icon.png",
+    "needs8gbRam": false
+  },
+  {
+    "name": "Mehssaging",
+    "url": "https://andrewlovesmillie.com/splorgus/mehssaging.html",
+    "img": "https://andrewlovesmillie.com/splorgus/icon.png",
     "needs8gbRam": false
   }
 ]
