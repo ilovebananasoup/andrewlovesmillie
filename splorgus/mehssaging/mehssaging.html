@@ -33,6 +33,7 @@ body{
     border-top:1px solid #1c1c1c;
     color:#8f9ce7;
     font-family:monospace;
+    word-wrap: break-word;
 }
 
 .system{
@@ -117,48 +118,31 @@ const uid = params.get("uid");
 
 
 
-function createMessageElement(id,data){
-
+function createMessageElement(id, data) {
     const div = document.createElement("div");
     div.dataset.id = id;
 
-    if(data.user === "SYSTEM"){
-
-        div.className = "system";
-        div.textContent = data.text;
-        return div;
-
+    let displayTime = "[...] ";
+    if (data.time) {
+        const date = data.time.toDate();
+        displayTime = "[" + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + "] ";
     }
 
-    if(data.to){
-
-        div.classList.add("pm");
-
-        const span = document.createElement("span");
-        span.className="username";
-
-        if(data.user === username){
-            span.textContent="(PM to "+data.to+") ";
-        }else{
-            span.textContent="(PM from "+data.user+") ";
-        }
-
-        div.appendChild(span);
-        div.append(data.text);
+    if (data.user === "SYSTEM") {
+        div.className = "system";
+        div.textContent = displayTime + data.text;
         return div;
-
     }
 
     const userSpan = document.createElement("span");
-    userSpan.className="username";
-    userSpan.textContent = data.user + ": ";
+    userSpan.className = "username";
+    userSpan.textContent = displayTime + data.user + ": ";
 
     div.appendChild(userSpan);
     div.append(data.text);
-
     return div;
-
 }
+
 
 
 
@@ -236,8 +220,14 @@ onAuthStateChanged(auth, async (user) => {
     }
 
     const snap = await getDoc(doc(db,"users",userId));
-    username = snap.data()?.username || "anon";
 
+    const data = snap.data();
+
+    if (snap.exists() && data.username) {
+        username = data.username;
+    } else {
+        username = "anon";
+    }
     input.disabled=false;
     input.placeholder="type message...";
     input.focus();
@@ -265,12 +255,11 @@ input.addEventListener("keydown",async(e)=>{
 
     e.preventDefault();
 
-    if(!uid) return;
-    
     const text=input.value.trim();
     if(!text) return;
 
-    const now=Date.now();
+    const now = new Date;
+    const lastMessageTime = Date.now;
 
     if(now-lastMessageTime<SPAM_DELAY){
         return;
@@ -324,7 +313,12 @@ input.addEventListener("keydown",async(e)=>{
 
     }
 
-
+    const nowtime = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { 
+        hour: 'numeric', 
+        minute: 'numeric', 
+        hour12: true
+    });
 
     await addDoc(messagesRef,{
         user:username,
