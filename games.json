@@ -3012,12 +3012,7 @@
     "img": "https://andrewlovesmillie.com/splorgus/gn/Shapezio/icon.png",
     "needs8gbRam": false
   },
-  {
-    "name": "[!] COMMENTS",
-    "url": "https://andrewlovesmillie.com/splorgus/gn/COMMENTS",
-    "img": "https://andrewlovesmillie.com/splorgus/gn/COMMENTS/icon.png",
-    "needs8gbRam": false
-  },
+
   {
     "name": "Plants vs. Zombies 2 Gardenless",
     "url": "https://andrewlovesmillie.com/splorgus/gn/Plants-vs-Zombies-2-Gardenless",
@@ -4111,7 +4106,7 @@
     "needs8gbRam": false
   },
   {
-    "name": "Mehssaging",
+    "name": "[!] Mehssaging",
     "url": "https://andrewlovesmillie.com/splorgus/mehssaging/mehssaging.html",
     "img": "https://andrewlovesmillie.com/splorgus/mehssaging/icon.png",
     "needs8gbRam": false
